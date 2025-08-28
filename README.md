@@ -20,5 +20,5 @@
 5. Run the server by the command:
      ```uvicorn app.main:app --reload```
 6. Open API docs to test endpoints:
-    Swagger UI: http://127.0.0.1:8000/docs
+    Swagger UI: http://127.0.0.1:8000/docs,
     Redoc: http://127.0.0.1:8000/redoc
