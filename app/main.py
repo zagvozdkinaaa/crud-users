@@ -13,7 +13,7 @@ models.Base.metadata.create_all(bind=engine)
 
 @app.post('/users/', response_model=schemas.UserResponse)
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
-    existing_user = db.query(models.User).filter(models.User.id ==  user.id, models.User.username == user.username).first()
+    existing_user = db.query(models.User).filter(models.User.email ==  user.email).first()
     if existing_user:
         raise HTTPException(status_code=400, detail='User already exists')
     new_user = models.User(**user.dict())
